@@ -35,11 +35,10 @@ def makeOrder( custOrder , formData,user ):
     print(  "Time " +   formData.get('order_from_time') )
     freeTable = availableTable(formData.get('people_count'), formData.get('table_type'))
     finalOrder = FinalOrder( table_id = freeTable, order_final_id = custOrder, customer_id = user,
-<<<<<<< HEAD
                              date =  formData.get('my_date_field') , order_time = formData.get('order_from_time')+':00:00' ,total_prize = totalPrice )
-=======
-                             date =  formData.get('my_date_field') ,order_time = fromData.get('order_from_time')+'"00:00' ,total_prize = totalPrice )
->>>>>>> f7630cefd45d77622bce0b0b35b79e2d70231f0e
+
+
+
     finalOrder.save()
     freeTable = Table.objects.filter( table_id = freeTable.table_id  ).first()
 
