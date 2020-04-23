@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1|0" >
+        <tr>
+            <th> Order ID </th>
+            <th> Order Date </th>
+            <th> Order Time </th>
+            <th> Total Cost </th>
+        </tr>
+
+        {% for customerOrder in orders %}
+            <tr>
+                <td> {{customerOrder}}  </td>
+                <td> {{customerOrder.date}}  </td>
+                <td> {{customerOrder.order_time}}  </td>
+                <td> {{customerOrder.total_prize}}  </td>
+            </tr>
+        {% endfor %}
+
+
+
+    </table>
+
+
+
+</body>
+</html>

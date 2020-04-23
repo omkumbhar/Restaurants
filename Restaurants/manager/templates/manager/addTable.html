@@ -1,0 +1,28 @@
+{% extends "manager/managerBase.html" %}
+    {% block content %}
+        <center>
+            <div>
+
+            <br><h2> Add Table </h2>
+
+                <form method="post" >{% csrf_token %}
+                    {% for fields in table_form %}
+                        <p>
+                            {{ fields.label_tag  }}
+                            {{ fields }}
+                            {% if fields.help_text %}
+                                <small style="color : grey;"> {{ fields.help_text }} </small>
+                            {% endif %}
+
+                            {% for error in fields.errors %}
+                                <p style="color : red;" > {{ error }}  </p>
+                            {% endfor %}
+                        </p>
+                    {% endfor %}
+
+                <button type="submit" >Add table</button>
+                </form>
+
+            </div>
+        </center>
+    {% endblock %}
