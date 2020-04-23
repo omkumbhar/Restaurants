@@ -1,63 +1,67 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Manager</title>
     <style>
-        body {
-
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url("l1.jpg");
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-
-        }
-
-        ul {
-            float: right;
-            list-style-type: none;
-            margin-top: 25px;
-        }
-
-        ul li {
-            display: inline-block;
-        }
-
-        ul li a {
-            text-decoration: none;
-            color: #fff;
-            padding: 5px 20px;
-            border: 1px solid transparent;
-            transition: 0.6s ease;
-        }
-
-        ul li a:hover {
-            background-color: #fff;
-            color: #000;
-        }
+       
     </style>
 
-
-    </head>
+ <link rel="stylesheet" type= "text/css" href="{% static 'style3.css'%}">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
 
-    <body>
-    <div class="box">
-        <ul type="none">
-            <li><a href="  {% url 'manager-viewOrders'  %}   ">View & Update Order</a></li>
-            <li><a href="">Display Bill</a></li>
-            <li><a href="">Add New Customer</a></li>
-            <li><a href="">Delete Details</a></li>
-            <li><a href="  {% url 'manager-addTable'  %}   ">Update table Details</a></li>
-            <li><a href="{% url 'manager-addFoodItem'  %}">update menu Details</a></li>
-            <li><a href="{% url 'account-logout'  %}">Logout</a></li>
-        </ul> <br> <br>
+   
+<style>
 
+
+</style>
+  <title>Responsive Animated Sidebar Menu</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" href="style.css">
+<script>
+  function openSlideMenu(){
+    document.getElementById('menu').style.width = '250px';
+    document.getElementById('content').style.marginLeft = '250px';
+  }
+  function closeSlideMenu(){
+    document.getElementById('menu').style.width = '0';
+    document.getElementById('content').style.marginLeft = '0';
+  }
+</script>
+</head>
+<body>
+<header>
+  <div id="content">
+
+    <span class="slide">
+      <a href="#" onclick="openSlideMenu()">
+        <i class="fas fa-bars"></i>
+      </a>
+    </span>
+
+    <div id="menu" class="nav">
+      <a href="#" class="close" onclick="closeSlideMenu()">
+        <i class="fas fa-times"></i>
+      </a>
+      <a href="#">Home</a>
+      <a href="{% url 'manager-addFoodItem'  %}">Update Menu</a>
+      <a href="  {% url 'manager-addTable'  %}   ">Add Table</a>
+      <a href="#">Add menu</a>
+      <a href="#">View Order</a>
+	<a href="#">Generate Bill</a>
     </div>
 
-    {% block content %}{% endblock %}
+
+
+</div>
+</header>
+
+
+  {% block content %}{% endblock %}
 
 
 
@@ -65,8 +69,6 @@
 
 
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
     </body>
-</html>
+    </html>
