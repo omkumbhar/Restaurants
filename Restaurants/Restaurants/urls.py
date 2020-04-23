@@ -25,6 +25,10 @@ urlpatterns = [
     path('manager/', include('manager.urls')),
     path('customer/', include('customer.urls')),
 
+<<<<<<< HEAD
 
 
+=======
+path('', include('blog.urls')),
+>>>>>>> f7630cefd45d77622bce0b0b35b79e2d70231f0e
 ]
