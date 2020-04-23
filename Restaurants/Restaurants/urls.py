@@ -26,4 +26,5 @@ urlpatterns = [
     path('customer/', include('customer.urls')),
 
 
+
 ]

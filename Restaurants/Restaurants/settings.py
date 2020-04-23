@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'customer.apps.CustomerConfig',
 
 
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
