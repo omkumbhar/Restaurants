@@ -71,7 +71,7 @@ script.jsscript.js
 								<li><a href=  "{% url 'manager-home' %}"  >Manager Home</a></li>
 							{% endif %}
 							<li><a href="{% url 'customer-orders' %}" >My Orders</a></li>
-							<li><a href="feedlogin.php">Complaint</a></li>
+							<li><a href=""{% url 'blog-home' %}"">Reviews</a></li>
 							<li><a href=  "{% url 'restaurant-about' %}"  >About</a></li>
 							<li><p> <font color="white"> Hello, {{ request.user.first_name }} </font> </p> </li>
 							<li> <a href="{% url 'account-logout'  %}"> LOGOUT </a>  </li>
@@ -91,7 +91,7 @@ script.jsscript.js
 						<ul>
 							<li><a href="Home.php">Home</a></li>
 							<li><a href="contact.php">Help</a></li>
-							<li><a href="feedlogin.php">Complaint</a></li>
+							<li><a href="{% url 'blog-home' %}">Reviews</a></li>
 							<li> <a href="{% url 'account-registration' %}">Registration</a>  </li>
 							<li><a href="{% url 'account-login' %}">Login</a></li>
 							<li><a href=  "{% url 'restaurant-about' %}"  >About</a></li>

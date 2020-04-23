@@ -34,7 +34,7 @@ def makeOrder( custOrder , formData,user ):
 
     freeTable = availableTable(formData.get('people_count'), formData.get('table_type'))
     finalOrder = FinalOrder( table_id = freeTable, order_final_id = custOrder, customer_id = user,
-                             date =  formData.get('my_date_field') ,order_time = '09:12:45' ,total_prize = totalPrice )
+                             date =  formData.get('my_date_field') ,order_time = fromData.get('order_from_time')+'"00:00' ,total_prize = totalPrice )
     finalOrder.save()
 
 
