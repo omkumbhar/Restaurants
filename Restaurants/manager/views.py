@@ -1,6 +1,7 @@
 from django.shortcuts import render ,redirect
 from .forms import AddTable ,AddFoodItem
 from .models import CustomerOrder, FinalOrder
+from .Orders.viewBill import Orders
 
 
 def home(request):
@@ -45,6 +46,15 @@ def viewOrders(request):
     orders = CustomerOrder.objects.filter(is_complted = True)
 
     return render(request, 'manager/viewOrders.html', context)
+
+
+
+def viewBill(request):
+    context = {}
+    orders = Orders(request)
+    context['orders'] = orders
+    return render(request, 'manager/viewBill.html', context)
+
 
 
 
