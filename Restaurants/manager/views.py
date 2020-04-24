@@ -51,7 +51,7 @@ def viewOrders(request):
 
 def viewBill(request):
     context = {}
-    orders = Orders(request)
+    orders = Orders()
     context['orders'] = orders
     return render(request, 'manager/viewBill.html', context)
 
