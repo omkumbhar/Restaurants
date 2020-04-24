@@ -92,8 +92,7 @@ script.jsscript.js
 							<li><a href="Home.php">Home</a></li>
 							<li><a href="contact.php">Help</a></li>
 							<li><a href="{% url 'blog-home' %}">Reviews</a></li>
-							<li> <a href="{% url 'account-registration' %}">Registration</a>  </li>
-							<li><a href="{% url 'account-login' %}">Login</a></li>
+
 							<li><a href=  "{% url 'restaurant-about' %}"  >About</a></li>
 						</ul>
 					</div>
@@ -120,10 +119,33 @@ script.jsscript.js
 		<div class="title">
 			<h1>RESTAURANT BOOKING</h1>
 		</div>
-		<div class="button">
+
+
+		{% if request.user.is_authenticated %}
+			<div class="button">
 			<a href="{% url 'customer-register'  %}" class="btn">Book Table</a>
 
-		</div>
+			</div>
+
+		{% else %}
+			<div class="button">
+			<a href="{% url 'account-registration' %}"    class="btn" >Registration</a>
+							<a href="{% url 'account-login' %}"    class="btn"  >Login</a>
+
+			</div>
+
+
+
+		{% endif %}
+
+
+
+
+
+
+
+
+
 	</header>
 </body>
 
